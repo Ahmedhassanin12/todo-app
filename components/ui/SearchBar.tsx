@@ -15,19 +15,21 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
       value={value}
       onChange={(e) => onChange(e.target.value)}
       sx={{ width: 250 }}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon sx={{ color: "text.secondary", fontSize: 17 }} />
-          </InputAdornment>
-        ),
-        endAdornment: value ? (
-          <InputAdornment position="end">
-            <IconButton size="small" edge="end" onClick={() => onChange("")}>
-              <ClearIcon sx={{ fontSize: 15 }} />
-            </IconButton>
-          </InputAdornment>
-        ) : null,
+      slotProps={{
+        input: {
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon sx={{ color: "text.secondary", fontSize: 17 }} />
+            </InputAdornment>
+          ),
+          endAdornment: value ? (
+            <InputAdornment position="end">
+              <IconButton size="small" edge="end" onClick={() => onChange("")}>
+                <ClearIcon sx={{ fontSize: 15 }} />
+              </IconButton>
+            </InputAdornment>
+          ) : null,
+        },
       }}
     />
   );

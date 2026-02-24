@@ -17,9 +17,9 @@ export function AppHeader({ totalCount }: AppHeaderProps) {
         <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1 }}>
           <Box
             sx={{
-              bgcolor: alpha("#7c6af7", 0.15),
+              
               border: "1px solid",
-              borderColor: alpha("#7c6af7", 0.3),
+             
               borderRadius: 2,
               p: 0.75,
               display: "flex",
