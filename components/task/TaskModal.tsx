@@ -99,9 +99,9 @@ export function TaskModal() {
           disabled={!modal.title.trim() || isPending}
           onClick={handleSave}
           sx={{
-            bgcolor: col?.color ?? "primary.main",
-            "&:hover": { bgcolor: col?.color, filter: "brightness(1.12)" },
-            "&.Mui-disabled": { bgcolor: "#1c2238", color: "text.secondary" },
+            bgcolor: "primary.main",
+            "&:hover": { bgcolor: "primary.main", filter: "brightness(1.12)" },
+            "&.Mui-disabled": { bgcolor: "#95a0c6ff", color: "text.secondary" },
           }}
         >
           {modal.mode === "create" ? "Create Task" : "Save Changes"}

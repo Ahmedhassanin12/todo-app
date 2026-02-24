@@ -151,6 +151,21 @@ export function KanbanColumn({ col, tasks }: KanbanColumnProps) {
 
           <Box id={col.id} sx={{ height: 2 }} />
         </Box>
+        <Tooltip title={`Add to ${col.label}`} arrow>
+            <Button
+              size="small"
+              onClick={() => openCreateModal(col.id)}
+              sx={{
+                width: "100%",
+                color: col.color,
+                bgcolor: col.lightColor,
+                "&:hover": { bgcolor: alpha(col.color, 0.22) },
+              }}
+              endIcon={<AddIcon sx={{ fontSize: 15 }} />}
+            >
+              Add Task
+            </Button>
+          </Tooltip>
       </Box>
     </SortableContext>
   );
