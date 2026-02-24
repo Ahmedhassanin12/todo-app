@@ -12,7 +12,7 @@ export function AppHeader({ totalCount }: AppHeaderProps) {
   const setSearch = useTaskStore((s) => s.setSearch);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{bgcolor: "#fefefe8e"}}>
       <Toolbar sx={{ px: { xs: 2, md: 3 }, gap: 2, minHeight: "58px !important" }}>
         <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1 }}>
           <Box
@@ -36,6 +36,7 @@ export function AppHeader({ totalCount }: AppHeaderProps) {
                 fontSize: "0.88rem",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.2,
+                color: "text.primary",
               }}
             >
               Kanban Board

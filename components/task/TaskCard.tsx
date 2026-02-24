@@ -77,8 +77,8 @@ export function TaskCard({ task, col, onEdit, onDelete, overlay = false }: TaskC
               py: 0.3,
               px: 1,
               color: "text.secondary",
-              bgcolor: "#444",
-              "&:hover": { bgcolor: "#232d52", color: "text.primary" },
+              bgcolor: "#fefefe8e",
+              "&:hover": { bgcolor: "#fefefe34", color: "text.primary" },
             }}
           >
             Edit
