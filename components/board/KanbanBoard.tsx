@@ -1,5 +1,4 @@
 "use client";
-import { createPortal } from "react-dom";
 import { DndContext, DragOverlay, closestCenter } from "@dnd-kit/core";
 import { Box } from "@mui/material";
 import { AppHeader } from "@/components/ui/AppHeader";
@@ -52,12 +51,11 @@ export function KanbanBoard() {
           ))}
         </Box>
 
-        {createPortal(
+        
           <DragOverlay>
             {activeTask && <TaskCard task={activeTask} col={activeCol} overlay />}
-          </DragOverlay>,
-          document.body
-        )}
+          </DragOverlay>
+       
       </DndContext>
 
       <TaskModal />
