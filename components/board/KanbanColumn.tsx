@@ -1,3 +1,4 @@
+import { useDroppable } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import {
   Box,
@@ -29,6 +30,7 @@ export function KanbanColumn({ col, tasks }: KanbanColumnProps) {
   const openEditModal = useTaskStore((s) => s.openEditModal);
 
   const { mutate: deleteTask } = useDeleteTask();
+  const { setNodeRef } = useDroppable({ id: col.id });
 
   const paginated = tasks.slice(0, page * PAGE_SIZE);
   const hasMore = paginated.length < tasks.length;
@@ -40,6 +42,7 @@ export function KanbanColumn({ col, tasks }: KanbanColumnProps) {
       strategy={verticalListSortingStrategy}
     >
       <Box
+        ref={setNodeRef}
         sx={{
           bgcolor: "background.paper",
           borderRadius: 3,

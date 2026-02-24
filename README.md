@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Management Kanban Board
 
-## Getting Started
+A modern, responsive Task Management application built with Next.js, Material UI, and TanStack Query. It features a fully functional Kanban board with drag-and-drop capabilities, real-time data persistence using JSON Server, and a sleek, user-friendly interface.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Kanban Board**: Organize tasks across multiple columns: Backlog, In Progress, Review, and Done.
+- **Drag and Drop**: Seamlessly move tasks between columns using @dnd-kit.
+- **Task Management**: Create, edit, and delete tasks with detailed titles and descriptions.
+- **Search & Filter**: Quickly find tasks using the global search bar in the header.
+- **Pagination**: Efficiently handles large task lists with "Load more" functionality and automatic pagination.
+- **Responsive Design**: Optimized for various screen sizes using Material UI's flexible grid system.
+- **Data Persistence**: Uses a local JSON server to persist task data across sessions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **UI Components**: [Material UI (MUI)](https://mui.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) with [Zustand Mutative](https://github.com/mweststrate/zustand-mutative)
+- **Data Fetching**: [TanStack Query (React Query)](https://tanstack.com/query/latest)
+- **Drag and Drop**: [@dnd-kit/core](https://dnd-kit.com/) & [@dnd-kit/sortable](https://dnd-kit.com/)
+- **API Client**: [Axios](https://axios-http.com/)
+- **Backend Mock**: [JSON Server](https://github.com/typicode/json-server)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  Clone the repository:
+    ```bash
+    git clone [your-repo-url]
+    cd todo-app
+    ```
 
-## Deploy on Vercel
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running the Project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You need to run **two** separate processes for the application to function correctly:
+
+1.  **Start the JSON Server (Backend)**:
+    Open a terminal and run:
+    ```bash
+    npm run json-server
+    ```
+    This will start the mock backend on `http://localhost:4000`.
+
+2.  **Start the Next.js App (Frontend)**:
+    Open another terminal and run:
+    ```bash
+    npm run dev
+    ```
+    This will start the frontend on `http://localhost:3000`.
+
+### 📝 Project Structure
+
+- `app/`: Next.js App Router pages and layouts.
+- `components/`: Reusable UI components (buttons, cards, headers).
+- `modules/`: Feature-specific logic (Tasks store, hooks, types, constants).
+- `api/`: Axios configuration and API service definitions.
+- `db.json`: Database file for JSON Server.
